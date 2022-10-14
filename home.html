@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Linking the Libre BaskerVille font from Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!--Linking the .js and .css files for the home page-->
+    <script defer src="js/log.js"></script>
+    <script defer src="js/edit.js"></script>
+    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/log-modal.css">
+    <link rel="stylesheet" href="styles/edit-modal.css">
+    <link rel="stylesheet" href="styles/general.css">
+  </head>
+  <body>
+    <header>
+      Stats
+    </header>
+    <canvas></canvas>
+
+
+    <div class="log-button-div">
+      <button data-modal-target="#modal" class="log-button">
+        Log a Climb
+      </button>
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="modal-title">Log Your Climb</div>
+        <button data-close-button class="modal-close-button">
+          &times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="checkbox-grid">
+            <div class="bouldering-checkbox">
+              Bouldering
+              <input type="checkbox" class="log-boulder-checkbox" id="log-boulder-checkbox">
+            </div>
+            <div class="sport-checkbox" id="sport-checkbox">
+              Sport
+              <input type="checkbox" class="log-sport-checkbox" id="log-sport-checkbox">
+            </div>
+            <div class="trad-checkbox" id="trad-checkbox">
+              Trad
+              <input type="checkbox" class="log-trad-checkbox" id="log-trad-checkbox">
+            </div>
+        </div>
+
+        <div class="climb-info-grid">
+          <div class="grade-container">
+            <div class="grade-text">
+              Grade:
+            </div>
+            <input type="text" class="log-grade-textbox" 
+            id="log-grade-textbox">
+          </div>
+          <div class="attempts-container">
+            # of Attempts:
+            <input type="number" class="log-attempts-number" 
+            id="log-attempts-number" min="1" max="99">
+          </div>
+          <div class="date-container">
+            Date:
+            <input type="date" class="log-datebox" id="log-datebox">
+          </div>
+        </div>
+        <div class="add-climb-button-container">
+          <button data-add-climb-button class="log-add-climb-button" onclick="addClimb()">
+            Add Climb</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-overlay"></div>
+
+
+    <div class="edit-button-div">
+      <button class="edit-button" id="edit-button" 
+      onclick="renderEditModal()">
+        Edit a Climb
+      </button>
+    </div>
+
+    <div class="edit-modal" id="edit-modal">
+      <div class="edit-modal-header">
+        <div class="edit-modal-title" id="edit-modal-title">Edit Your Climbs</div>
+        <button class="edit-modal-close-button" id="edit-modal-close-button"
+        onclick="closeEditModal()">
+        &times;</button>
+      </div>
+      
+      <div id="edit-modal-body">
+        TODO
+      </div>
+    </div>
+
+    <div id="edit-modal-overlay" onclick="closeEditModal()"></div>
+
+    
+  </body>
+</html>
